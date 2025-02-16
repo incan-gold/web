@@ -6,7 +6,7 @@
     "anchor": "cd anchor && anchor",
     "anchor-build": "cd anchor && anchor build",
     "anchor-localnet": "cd anchor && anchor localnet",
-    "anchor-test": "cd anchor && anchor test",
+    "anchor-test": "cd anchor && anchor test --skip-local-validator",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
@@ -31,7 +31,8 @@
   },
   "devDependencies": {
     "@types/bn.js": "^5.1.0",
-    "@types/jest": "^29.0.3",
+    "@types/jest": "^29.5.14",
+    "@types/mocha": "^10.0.10",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
