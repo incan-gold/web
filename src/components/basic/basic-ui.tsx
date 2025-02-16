@@ -1,6 +1,6 @@
-'use client';
+"use client";
 
-import { useBasicProgram } from './basic-data-access'
+import { useBasicProgram } from "./basic-data-access";
 
 export function BasicCreate() {
   const { greet } = useBasicProgram();
@@ -11,13 +11,14 @@ export function BasicCreate() {
       onClick={() => greet.mutateAsync()}
       disabled={greet.isPending}
     >
-      Run program{greet.isPending && '...'}
+      Run program{greet.isPending && "..."}
     </button>
   );
 }
 
 export function BasicProgram() {
-  const { getProgramAccount } = useBasicProgram();
+  const { program, getProgramAccount } = useBasicProgram();
+  console.log(program);
 
   if (getProgramAccount.isLoading) {
     return <span className="loading loading-spinner loading-lg"></span>;
@@ -33,8 +34,8 @@ export function BasicProgram() {
     );
   }
   return (
-    <div className={'space-y-6'}>
-      <pre>{JSON.stringify(getProgramAccount.data.value, null, 2)}</pre>
+    <div className={"space-y-6"}>
+      <pre>{JSON.stringify(getProgramAccount, null, 2)}</pre>
     </div>
   );
 }
